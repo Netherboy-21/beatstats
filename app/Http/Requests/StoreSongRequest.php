@@ -28,6 +28,7 @@ class StoreSongRequest extends FormRequest
             'difficulty' => ['required','string'],
             'mode' => ['required','string'],
             'bpm' => ['required','integer'],
+            'seconds'=> ['required','integer'],
             'notes_per_second' => ['required'],
             'notes' => ['required','integer'],
             'walls' => ['required','integer'],

@@ -9,6 +9,7 @@ use Illuminate\Contracts\View\View;
 
 class SongController extends Controller
 {
+
     /**
      * Displays the list of songs
      * @return View
@@ -38,7 +39,9 @@ class SongController extends Controller
      * @return mixed|\Illuminate\Http\JsonResponse
      */
     public function store(StoreSongRequest $request) {
-        $song = Song::create($request->validated());
+        $request = $request->validated();
+        
+        $song = Song::create($request);
         return response()->json($song,200);
     }
 }

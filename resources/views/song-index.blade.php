@@ -1,3 +1,7 @@
 <div>
-    <!-- When there is no desire, all things are at peace. - Laozi -->
+    @foreach ($songs as $song)
+        <b>{{ $song->name }} ({{ ucwords($song->difficulty) }}) : {{ $song->getDifficultyRating() }}</b><br>
+        <em>{{ $song->artist }}</em>
+        <hr>
+    @endforeach
 </div>
