@@ -20,8 +20,15 @@ class SongController extends Controller
         return view("song-index", ["songs"=>$songs]);
     }
 
+    /**
+     * Display the information of a single song
+     * @param mixed $id
+     * @return View
+     */
     public function show($id) {
         $song = Song::find($id);
+
+        return view("song-show", ["song"=>$song]);
     }
 
     /**
@@ -42,6 +49,6 @@ class SongController extends Controller
         $request = $request->validated();
         
         $song = Song::create($request);
-        return response()->json($song,200);
+        return redirect("/songs/". $song->id);
     }
 }
